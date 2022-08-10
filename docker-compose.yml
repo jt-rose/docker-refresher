@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+    # build will tell the web service where to find the WORKDIR
+    # which in this case is the current dir
+    build: .
+    # set up port forwarding
+    ports:
+      - "8080:8080"
+  db:
+    # define the image, no separate dockerfile needed
+    image: "mysql"
+    # set up env variables
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      # connect volumes
+    volumes:
+      - db-data:/foo
+
+# define volumes available to all services
+volumes:
+  db-data:

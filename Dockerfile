@@ -27,9 +27,22 @@ EXPOSE 8080
 # which is used to serve everything up
 # by setting up the commands as a Vec<String>
 # we will avoid starting a shell
-CMD ["npm", "start"] 
+CMD ["npm", "run", "start"] 
 
 # once the dockerfile is ready, you can build it with:
 # docker build -t <TAGNAME> .
 # -t sets up the tagname and is followed by the path
 # which can be a . for the current workingdir
+
+# to run the container and connect it to the exposed port:
+# docker run -p 5000:8080 <TAGNAME>
+
+# create volume with:
+# docker volume create <VOLUMENAME>
+
+# you can then mount the volume to connect it to
+# one or more containers
+# docker run \
+# --mount source=<VOLUMENAME>,target=<WORKDIR> \
+
+# docker run -p 8081:8080 --mount source=shared-vol,target=/app jtr219/demoapp:1.0
