@@ -1,3 +1,7 @@
+// test env
+console.log(process.env.SECRET_OF_LIFE);
+console.log(process.env.HELLO);
+
 const app = require("express")();
 
 app.get("/", (req, res) => {

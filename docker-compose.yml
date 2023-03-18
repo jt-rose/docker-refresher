@@ -7,6 +7,14 @@ services:
     # set up port forwarding
     ports:
       - "8080:8080"
+    # set up env variables from file
+    env_file:
+      - .env
+    # set up env variables from shell script
+    environment:
+      - HELLO
+    # customize field with env var
+    container_name: "web_${HELLO}"
   db:
     # define the image, no separate dockerfile needed
     image: "mysql"

@@ -1,0 +1,5 @@
+#! /bin/bash
+# create env var to inject into docker-compose
+export HELLO=GOODBYE
+
+docker-compose up 
