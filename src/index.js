@@ -1,6 +1,7 @@
 // test env
 console.log(process.env.SECRET_OF_LIFE);
 console.log(process.env.HELLO);
+console.log(process.env.ENVAR);
 
 const app = require("express")();
 

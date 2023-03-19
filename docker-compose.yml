@@ -13,6 +13,7 @@ services:
     # set up env variables from shell script
     environment:
       - HELLO
+      - ENVAR
     # customize field with env var
     container_name: "web_${HELLO}"
   db:
